@@ -1,0 +1,8 @@
+ARG DOCKER_SERVER="mydocker"
+ARG WIN_VERSION="ltsc2019"
+ARG VSBUILDTOOLS_VERSION="16"
+FROM ${DOCKER_SERVER}/vsbuildtools:${VSBUILDTOOLS_VERSION}-windowsservercore-${WIN_VERSION}
+
+WORKDIR /src
+COPY . .
+VOLUME ["C:/target"]
