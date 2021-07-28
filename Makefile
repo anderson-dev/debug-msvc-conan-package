@@ -42,7 +42,7 @@ compile:
 		-t "$(IMAGE)" \
 		.
 	docker run --rm -v "$(BUILD_VOLUME):C:/src" -v "$(BUILD_CACHE_VOLUME):C:/Users/containeradministrator/.conan" "$(IMAGE)" \
-		conan install -if make/msvc/x64/Release/.conan .;conan build -if make/msvc/x64/Release/.conan .
+		powershell conan install -if make/msvc/x64/Release/.conan .;conan build -if make/msvc/x64/Release/.conan .
 	
 build: verify compile test package
 
