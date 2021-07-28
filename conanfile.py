@@ -21,8 +21,7 @@ class ConanPackageInfo(ConanFile):
         
     def package(self):
         self.copy("*.h", dst="include", src="include")
-        self.copy("*.exe", dst="bin", src="make/msvc/x64/Release")
         self.copy("*.lib", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["AddressBookLib"]
+        self.cpp_info.libs = ["AddressBook.lib"]

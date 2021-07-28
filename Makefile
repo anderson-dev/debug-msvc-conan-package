@@ -42,16 +42,16 @@ compile:
 		-t "$(IMAGE)" \
 		.
 	docker run --rm -v "$(BUILD_VOLUME):C:/src" -v "$(BUILD_CACHE_VOLUME):C:/Users/containeradministrator/.conan" "$(IMAGE)" \
-		powershell conan install .;conan build .
-	# docker run --rm -v "$(BUILD_VOLUME):C:/src" -v "$(BUILD_CACHE_VOLUME):C:/Users/containeradministrator/.conan" "$(IMAGE)" \
-	# 	powershell conan build .
+		conan install -if make/msvc/x64/Release/.conan .;conan build -if make/msvc/x64/Release/.conan .
 	
 build: verify compile test package
 
 test:
-
+	docker run --rm -v "$(BUILD_VOLUME):C:/src" -v "$(BUILD_CACHE_VOLUME):C:/Users/containeradministrator/.conan" "$(IMAGE)" \
+		powershell make/msvc/x64/Release/TestAddressBook.exe
 package:
-	
+	docker run --rm -v "$(BUILD_VOLUME):C:/src" -v "$(BUILD_CACHE_VOLUME):C:/Users/containeradministrator/.conan" "$(IMAGE)" \
+		powershell conan package -if make/msvc/x64/Release/.conan .
 publish:
 
 finalize:

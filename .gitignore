@@ -18,12 +18,12 @@
 mono_crash.*
 
 # Build results
-[Dd]ebug/
+**/[Dd]ebug/*
 [Dd]ebugPublic/
-[Rr]elease/
+**/[Rr]elease/*
 [Rr]eleases/
-x64/
-x86/
+x64/*
+x86/*
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
@@ -405,12 +405,16 @@ conan_build.props
 conanbuildinfo.txt
 conaninfo.txt
 graph_info.json
-conanbuildinfo.props
+/conanbuildinfo.props
 conanmanifest.txt
 package
 
+# Dockerfile
 # allow vs conan extension props files
-!*/.conan/conanbuildinfo.props
+!**/[Dd]ebug/.conan
+!**/[Dd]ebug/.conan/conanbuildinfo.props
+!**/[Rr]elease/.conan
+!**/[Rr]elease/.conan/conanbuildinfo.props
 
 # GitVersion transient Files
 GitVersion.json

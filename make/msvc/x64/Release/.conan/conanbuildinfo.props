@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Conan-RootDirs">
+    <Conan-boost-Root>C:\.conan\d2nv4_kk\1</Conan-boost-Root>
+    <Conan-zlib-Root>$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab</Conan-zlib-Root>
+    <Conan-bzip2-Root>$(USERPROFILE)\.conan\data\bzip2\1.0.8\_\_\package\d16a91eadaaf5829b928b12d2f836ff7680d3df5</Conan-bzip2-Root>
+  </PropertyGroup>
+  <PropertyGroup Label="ConanVariables">
+    <ConanPackageName>AddressBook</ConanPackageName>
+    <ConanPackageVersion>0.1.0-version.h.1</ConanPackageVersion>
+    <ConanCompilerFlags></ConanCompilerFlags>
+    <ConanLinkerFlags></ConanLinkerFlags>
+    <ConanPreprocessorDefinitions>BOOST_STACKTRACE_USE_NOOP;BOOST_ALL_NO_LIB;BOOST_STACKTRACE_USE_WINDBG;BOOST_STACKTRACE_USE_WINDBG_CACHED;</ConanPreprocessorDefinitions>
+    <ConanIncludeDirectories>C:\.conan\d2nv4_kk\1\include;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\include;$(USERPROFILE)\.conan\data\bzip2\1.0.8\_\_\package\d16a91eadaaf5829b928b12d2f836ff7680d3df5\include;</ConanIncludeDirectories>
+    <ConanResourceDirectories></ConanResourceDirectories>
+    <ConanLibraryDirectories>C:\.conan\d2nv4_kk\1\lib;$(USERPROFILE)\.conan\data\zlib\1.2.11\_\_\package\3fb49604f9c2f729b85ba3115852006824e72cab\lib;$(USERPROFILE)\.conan\data\bzip2\1.0.8\_\_\package\d16a91eadaaf5829b928b12d2f836ff7680d3df5\lib;</ConanLibraryDirectories>
+    <ConanBinaryDirectories>$(USERPROFILE)\.conan\data\bzip2\1.0.8\_\_\package\d16a91eadaaf5829b928b12d2f836ff7680d3df5\bin;</ConanBinaryDirectories>
+    <ConanLibraries>libboost_contract.lib;libboost_coroutine.lib;libboost_fiber.lib;libboost_context.lib;libboost_graph.lib;libboost_iostreams.lib;libboost_json.lib;libboost_log_setup.lib;libboost_log.lib;libboost_locale.lib;libboost_math_c99.lib;libboost_math_c99f.lib;libboost_math_c99l.lib;libboost_math_tr1.lib;libboost_math_tr1f.lib;libboost_math_tr1l.lib;libboost_nowide.lib;libboost_program_options.lib;libboost_random.lib;libboost_regex.lib;libboost_stacktrace_noop.lib;libboost_stacktrace_windbg.lib;libboost_stacktrace_windbg_cached.lib;libboost_timer.lib;libboost_type_erasure.lib;libboost_thread.lib;libboost_atomic.lib;libboost_chrono.lib;libboost_container.lib;libboost_date_time.lib;libboost_unit_test_framework.lib;libboost_prg_exec_monitor.lib;libboost_test_exec_monitor.lib;libboost_exception.lib;libboost_wave.lib;libboost_filesystem.lib;libboost_system.lib;libboost_wserialization.lib;libboost_serialization.lib;zlib.lib;bz2.lib;</ConanLibraries>
+    <ConanSystemDeps>bcrypt.lib;ole32.lib;dbgeng.lib;</ConanSystemDeps>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LocalDebuggerEnvironment>PATH=%PATH%;$(USERPROFILE)\.conan\data\bzip2\1.0.8\_\_\package\d16a91eadaaf5829b928b12d2f836ff7680d3df5\bin;</LocalDebuggerEnvironment>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ConanIncludeDirectories)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>$(ConanPreprocessorDefinitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>$(ConanCompilerFlags) %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(ConanLibraryDirectories)%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(ConanLibraries)%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(ConanSystemDeps)%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>$(ConanLinkerFlags) %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Midl>
+      <AdditionalIncludeDirectories>$(ConanIncludeDirectories)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </Midl>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(ConanIncludeDirectories)%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>$(ConanPreprocessorDefinitions)%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>$(ConanCompilerFlags) %(AdditionalOptions)</AdditionalOptions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
